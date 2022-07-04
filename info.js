@@ -3,8 +3,8 @@ const fs = require("fs/promises");
 // const { info } = require("console");
 
 (async () => {
-  const url =
-    "https://hamrobazaar.com/cars/maruti-suzuki/suzuki-brezza-zdi-2016-in-nepal/3f16e3ed36d545418acddfadad3f33eb";
+  const url = "insert url"
+//     "https://hamrobazaar.com/cars/maruti-suzuki/suzuki-brezza-zdi-2016-in-nepal/3f16e3ed36d545418acddfadad3f33eb";
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.goto(url);
