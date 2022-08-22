@@ -30,11 +30,4 @@ function download(url, filepath, callback) {
   });
 }
 
-// downloadFile(
-//   "https://images.pexels.com/photos/12553640/pexels-photo-12553640.jpeg",
-//   function (fn) {
-//     console.log(fn);
-//   }
-// );
-
 module.exports.download = download;

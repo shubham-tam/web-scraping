@@ -6,13 +6,14 @@ const filepath = path.resolve(__dirname, "images");
 
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
-  const url =
-    "https://hamrobazaar.com/cars/maruti-suzuki/suzuki-brezza-zdi-2016-in-nepal/3f16e3ed36d545418acddfadad3f33eb";
-
+  const url = "insert URL ";
+  // "https://hamrobazaar.com/cars/maruti-suzuki/brezza-zdi-in-kathmandu/e018f76340634793bab89d523731165f";
+  // "https://hamrobazaar.com/";
   const page = await browser.newPage();
+
   await page.goto(url, { waitUntil: "networkidle0" });
 
-  const imageUrls = await page.$$eval(".item img[src]", (imgs) =>
+  const imageUrls = await page.$$eval(".item img", (imgs) =>
     imgs.map((img) => img.getAttribute("src"))
   );
 
@@ -21,6 +22,5 @@ const filepath = path.resolve(__dirname, "images");
       console.log("Download Complete for " + filename);
     });
   });
-
-  // console.log(imageUrls);
+  await browser.close();
 })();
